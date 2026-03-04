@@ -8,15 +8,9 @@ Usage:
   3. Upload the followers.json and following.json files to this app
 """
 
-from flask import Flask, render_template, request, jsonify
-import json
-import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max upload
-
-UPLOAD_FOLDER = 'uploads'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
 def parse_instagram_json(data, key=None):
